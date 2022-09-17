@@ -6,7 +6,8 @@ const butt = exp();
 const PORT = process.env.PORT || 3005;
 
 butt.use(exp.json());
-
+butt.use(exp.urlencoded({ extended: true }));
+butt.use(exp.static('public'));
 butt.use(require('./routes'));
 
 mongo.connect(process.env.DATABASE_URL || 'mongodb://localhost:27017', {
@@ -14,5 +15,5 @@ mongo.connect(process.env.DATABASE_URL || 'mongodb://localhost:27017', {
     useFindAndModify: false,
     useUnifiedTopology: true
 });
-
+mongo.set('debug', true);
 butt.listen(PORT, () => console.log(`DA PORT:${PORT}`));

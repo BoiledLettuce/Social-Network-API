@@ -1,0 +1,23 @@
+GET http://localhost:3005/api/users/
+
+###
+
+GET http://localhost:3005/api/users/63262d7182fba444dc6592ee
+
+
+###
+
+POST http://localhost:3005/api/users/
+Content-Type: application/json
+
+{
+    "username": "HELLO",
+    "email": "joe2@mamsa.com"
+}
+
+###
+
+DELETE http://localhost:3005/api/users/2
+
+
+###

@@ -68,7 +68,7 @@ const userMasterController = {
         User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
         .then(dbUserData => {
             if (!dbUserData) {
-            res.status(404).json({ message: 'User no exist' });
+            res.status(404).json({ message: 'YO' });
             return;
             }
             res.json(dbUserData);
@@ -78,10 +78,10 @@ const userMasterController = {
     delUser({ params }, res) {
         Thought.deleteMany({ userId: params.id })
         .then(() => {
-            User.findOneAndDelete( { userId: params.id } )
+            User.findOneAndDelete({ userId: params.id })
             .then(dbUserData => {
                 if (!dbUserData) {
-                    res.status(404).json({ message: 'User no exist' });
+                    res.status(404).json({ message: 'WAT' });
                     return;
                 }
                 res.json(dbUserData);

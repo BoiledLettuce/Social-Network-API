@@ -8,7 +8,7 @@ const reactionSchema = new Schema({ //maybe capitalize ReactionSchema
     createdAt: {
         type: Date,
         default: Date.now,
-        get: createdAtVal => moment(createdAtVal).format('llll') //https://devhints.io/moment
+        get: createdAtVal => mom(createdAtVal).format('llll') //https://devhints.io/moment
     },
     reactionId: {
         type: Schema.Types.ObjectId,
@@ -37,7 +37,7 @@ const thoughtSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        get: createdAtVal => moment(createdAtVal).format('llll')
+        get: createdAtVal => mom(createdAtVal).format('llll')
     },
     username: {
         type: String,
